@@ -21,7 +21,7 @@ namespace NhacNhoUongNuoc1
 
         public ThongTinForm(NguoiDung nguoiDung)
         {
-            
+
             InitializeComponent();
             nhacNhoTimer = new Timer();
             nhacNhoTimer.Tick += NhacNhoTimer_Tick; // Gắn sự kiện Tick để xử lý logic khi Timer đến giờ
@@ -63,12 +63,12 @@ namespace NhacNhoUongNuoc1
             MessageBox.Show("Đã đến giờ uống nước!", "Nhắc nhở", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
         }
 
-
-        private void ThongTinForm_Load(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
-        }
 
-        
+            System.Diagnostics.Process.Start("IExplore", "https://www.vinmec.com/vie/bai-viet/khuyen-cao-cua-who-ve-nhu-cau-nuoc-hang-ngay-vi");
+
+        }
     }
 }

@@ -59,7 +59,13 @@ namespace NhacNhoUongNuoc1
             this.Close(); // Đóng CaiDatForm
         }
 
-        
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+
+            System.Diagnostics.Process.Start("IExplore", "https://www.vinmec.com/vie/bai-viet/khuyen-cao-cua-who-ve-nhu-cau-nuoc-hang-ngay-vi");
+
+        }
     }
 }
 
