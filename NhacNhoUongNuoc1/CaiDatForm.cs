@@ -42,6 +42,7 @@ namespace NhacNhoUongNuoc1
             if (chkTuDong.Checked)
             {
                 IsTuDong = true; // Bật chế độ tự động
+                
             }
             else if (chkThuCong.Checked)
             {

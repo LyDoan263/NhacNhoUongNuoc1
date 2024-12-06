@@ -46,7 +46,7 @@ namespace NhacNhoUongNuoc1
                     // Kích hoạt nhắc nhở tự động mỗi giờ
                     nhacNhoTimer.Interval = 60000; // 1 giờ = 3600000 ms
                     nhacNhoTimer.Start();
-                    MessageBox.Show("Đã bật chế độ nhắc nhở tự động mỗi giờ!", "Thông Báo");
+                    MessageBox.Show("Đã bật chế độ nhắc nhở tự động sau mỗi giờ!", "Thông Báo");
                 }
                 else
                 {

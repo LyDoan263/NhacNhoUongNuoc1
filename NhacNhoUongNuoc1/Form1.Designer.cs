@@ -100,7 +100,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(210, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(424, 39);
+            this.label6.Size = new System.Drawing.Size(407, 38);
             this.label6.TabIndex = 5;
             this.label6.Text = "TIME TO DRINK WATER";
             // 
@@ -156,7 +156,8 @@
             // 
             // btnXacNhan
             // 
-            this.btnXacNhan.Location = new System.Drawing.Point(217, 398);
+            this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXacNhan.Location = new System.Drawing.Point(217, 406);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(131, 23);
             this.btnXacNhan.TabIndex = 13;
