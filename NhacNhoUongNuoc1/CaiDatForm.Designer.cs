@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CaiDatForm));
             this.chkTuDong = new System.Windows.Forms.CheckBox();
             this.chkThuCong = new System.Windows.Forms.CheckBox();
             this.numThoiGian = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.btnXacNhan = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.numThoiGian)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,16 +90,29 @@
             this.btnXacNhan.UseVisualStyleBackColor = true;
             this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(349, 397);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(260, 16);
+            this.linkLabel1.TabIndex = 5;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Nhu cầu uống nước hằng ngày ( Đọc thêm.)";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // CaiDatForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 256);
+            this.ClientSize = new System.Drawing.Size(652, 422);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btnXacNhan);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numThoiGian);
             this.Controls.Add(this.chkThuCong);
             this.Controls.Add(this.chkTuDong);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CaiDatForm";
             this.Text = "Custom Time";
             ((System.ComponentModel.ISupportInitialize)(this.numThoiGian)).EndInit();
@@ -113,5 +128,6 @@
         private System.Windows.Forms.NumericUpDown numThoiGian;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnXacNhan;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
