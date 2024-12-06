@@ -39,9 +39,10 @@
             // chkTuDong
             // 
             this.chkTuDong.AutoSize = true;
-            this.chkTuDong.Location = new System.Drawing.Point(81, 125);
+            this.chkTuDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.chkTuDong.Location = new System.Drawing.Point(52, 82);
             this.chkTuDong.Name = "chkTuDong";
-            this.chkTuDong.Size = new System.Drawing.Size(143, 20);
+            this.chkTuDong.Size = new System.Drawing.Size(159, 20);
             this.chkTuDong.TabIndex = 0;
             this.chkTuDong.Text = "Nhắc Nhớ Tự Động";
             this.chkTuDong.UseVisualStyleBackColor = true;
@@ -50,17 +51,18 @@
             // chkThuCong
             // 
             this.chkThuCong.AutoSize = true;
-            this.chkThuCong.Location = new System.Drawing.Point(81, 171);
+            this.chkThuCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.chkThuCong.Location = new System.Drawing.Point(52, 126);
             this.chkThuCong.Name = "chkThuCong";
-            this.chkThuCong.Size = new System.Drawing.Size(150, 20);
+            this.chkThuCong.Size = new System.Drawing.Size(218, 20);
             this.chkThuCong.TabIndex = 1;
-            this.chkThuCong.Text = "Nhắc Nhở Thủ Công";
+            this.chkThuCong.Text = "Nhắc Nhở Thủ Công ( phút )";
             this.chkThuCong.UseVisualStyleBackColor = true;
             this.chkThuCong.Click += new System.EventHandler(this.chkThuCong_CheckedChanged);
             // 
             // numThoiGian
             // 
-            this.numThoiGian.Location = new System.Drawing.Point(250, 169);
+            this.numThoiGian.Location = new System.Drawing.Point(315, 124);
             this.numThoiGian.Name = "numThoiGian";
             this.numThoiGian.Size = new System.Drawing.Size(79, 22);
             this.numThoiGian.TabIndex = 2;
@@ -68,15 +70,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(99, 79);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(47, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 16);
+            this.label1.Size = new System.Drawing.Size(219, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "CÀI ĐẶT NHẮC NHỞ";
             // 
             // btnXacNhan
             // 
-            this.btnXacNhan.Location = new System.Drawing.Point(81, 222);
+            this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXacNhan.Location = new System.Drawing.Point(128, 207);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(116, 23);
             this.btnXacNhan.TabIndex = 4;
@@ -95,7 +99,7 @@
             this.Controls.Add(this.chkThuCong);
             this.Controls.Add(this.chkTuDong);
             this.Name = "CaiDatForm";
-            this.Text = "Z";
+            this.Text = "Custom Time";
             ((System.ComponentModel.ISupportInitialize)(this.numThoiGian)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

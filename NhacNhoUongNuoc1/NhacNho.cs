@@ -26,7 +26,7 @@ namespace NhacNhoUongNuoc1
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             string thongBao = nguoiDung.NhacNhoUongNuoc();
-            Console.WriteLine(thongBao); // Bạn có thể thay bằng MessageBox nếu là WinForms
+            Console.WriteLine(thongBao);
         }
 
         public void Stop()

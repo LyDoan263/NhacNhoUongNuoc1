@@ -40,6 +40,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCaiDat = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label5
@@ -54,35 +56,40 @@
             // 
             // lblTen
             // 
-            this.lblTen.Location = new System.Drawing.Point(210, 64);
+            this.lblTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTen.Location = new System.Drawing.Point(3, 14);
             this.lblTen.Name = "lblTen";
             this.lblTen.Size = new System.Drawing.Size(179, 22);
             this.lblTen.TabIndex = 5;
             // 
             // lblTuoi
             // 
-            this.lblTuoi.Location = new System.Drawing.Point(210, 104);
+            this.lblTuoi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTuoi.Location = new System.Drawing.Point(3, 54);
             this.lblTuoi.Name = "lblTuoi";
             this.lblTuoi.Size = new System.Drawing.Size(179, 22);
             this.lblTuoi.TabIndex = 6;
             // 
             // lblChieuCao
             // 
-            this.lblChieuCao.Location = new System.Drawing.Point(210, 141);
+            this.lblChieuCao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblChieuCao.Location = new System.Drawing.Point(3, 91);
             this.lblChieuCao.Name = "lblChieuCao";
             this.lblChieuCao.Size = new System.Drawing.Size(179, 22);
             this.lblChieuCao.TabIndex = 7;
             // 
             // lblCanNang
             // 
-            this.lblCanNang.Location = new System.Drawing.Point(210, 179);
+            this.lblCanNang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCanNang.Location = new System.Drawing.Point(3, 129);
             this.lblCanNang.Name = "lblCanNang";
             this.lblCanNang.Size = new System.Drawing.Size(179, 22);
             this.lblCanNang.TabIndex = 8;
             // 
             // lblLitNuoc
             // 
-            this.lblLitNuoc.Location = new System.Drawing.Point(210, 223);
+            this.lblLitNuoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblLitNuoc.Location = new System.Drawing.Point(3, 173);
             this.lblLitNuoc.Name = "lblLitNuoc";
             this.lblLitNuoc.Size = new System.Drawing.Size(179, 22);
             this.lblLitNuoc.TabIndex = 10;
@@ -139,34 +146,46 @@
             // 
             // btnCaiDat
             // 
-            this.btnCaiDat.Location = new System.Drawing.Point(137, 320);
+            this.btnCaiDat.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCaiDat.Location = new System.Drawing.Point(169, 321);
             this.btnCaiDat.Name = "btnCaiDat";
-            this.btnCaiDat.Size = new System.Drawing.Size(75, 23);
+            this.btnCaiDat.Size = new System.Drawing.Size(172, 37);
             this.btnCaiDat.TabIndex = 20;
-            this.btnCaiDat.Text = "Cài Đặt";
+            this.btnCaiDat.Text = "Cài Đặt Nhắc Nhở";
             this.btnCaiDat.UseVisualStyleBackColor = true;
             this.btnCaiDat.Click += new System.EventHandler(this.btnCaiDat_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblChieuCao);
+            this.panel1.Controls.Add(this.lblTen);
+            this.panel1.Controls.Add(this.lblTuoi);
+            this.panel1.Controls.Add(this.lblCanNang);
+            this.panel1.Controls.Add(this.lblLitNuoc);
+            this.panel1.Enabled = false;
+            this.panel1.Location = new System.Drawing.Point(281, 50);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 213);
+            this.panel1.TabIndex = 21;
             // 
             // ThongTinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCaiDat);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblLitNuoc);
-            this.Controls.Add(this.lblCanNang);
-            this.Controls.Add(this.lblChieuCao);
-            this.Controls.Add(this.lblTuoi);
-            this.Controls.Add(this.lblTen);
             this.Controls.Add(this.label5);
             this.Name = "ThongTinForm";
             this.Text = "ThongTinForm";
             this.Load += new System.EventHandler(this.ThongTinForm_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +204,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnCaiDat;
+        private System.Windows.Forms.Panel panel1;
     }
 }
