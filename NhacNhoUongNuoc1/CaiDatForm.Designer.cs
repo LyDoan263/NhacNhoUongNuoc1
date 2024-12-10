@@ -68,6 +68,7 @@
             this.numThoiGian.Name = "numThoiGian";
             this.numThoiGian.Size = new System.Drawing.Size(79, 22);
             this.numThoiGian.TabIndex = 2;
+
             // 
             // label1
             // 

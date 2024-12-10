@@ -20,6 +20,7 @@ namespace NhacNhoUongNuoc1
         {
             // Nếu chọn chế độ thủ công, hiển thị NumericUpDown
             numThoiGian.Enabled = chkThuCong.Checked;
+           
 
             // Đảm bảo chế độ tự động không được chọn cùng lúc
             if (chkThuCong.Checked)
@@ -37,6 +38,7 @@ namespace NhacNhoUongNuoc1
         public bool IsTuDong { get; private set; } // Lưu trạng thái Tự Động
         public int ThoiGianThuCong { get; private set; } // Thời gian nhắc nhở (thủ công)
 
+        
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             if (chkTuDong.Checked)
@@ -48,6 +50,8 @@ namespace NhacNhoUongNuoc1
             {
                 IsTuDong = false; // Chế độ thủ công
                 ThoiGianThuCong = (int)numThoiGian.Value; // Lấy giá trị từ NumericUpDown
+               
+
             }
             else
             {
@@ -66,6 +70,8 @@ namespace NhacNhoUongNuoc1
             System.Diagnostics.Process.Start("IExplore", "https://www.vinmec.com/vie/bai-viet/khuyen-cao-cua-who-ve-nhu-cau-nuoc-hang-ngay-vi");
 
         }
+
+        
     }
 }
 

@@ -13,6 +13,7 @@ namespace NhacNhoUongNuoc1
 {
     public partial class ThongTinForm : Form
     {
+        private Form1 Form1;
 
         private Timer nhacNhoTimer;
         private double tongNuocCanUong; // Tổng lượng nước cần uống
@@ -23,11 +24,14 @@ namespace NhacNhoUongNuoc1
         {
 
             InitializeComponent();
+            
             nhacNhoTimer = new Timer();
             nhacNhoTimer.Tick += NhacNhoTimer_Tick; // Gắn sự kiện Tick để xử lý logic khi Timer đến giờ
             this.nguoiDung = nguoiDung;
             HienThiThongTin();
         }
+        public ThongTinForm(Form1 form)
+        { Form1 = form; }
         private void HienThiThongTin()
         {
             lblTen.Text = nguoiDung.Ten;
@@ -51,6 +55,7 @@ namespace NhacNhoUongNuoc1
                 else
                 {
                     // Kích hoạt nhắc nhở thủ công với thời gian được thiết lập
+
                     nhacNhoTimer.Interval = caiDatForm.ThoiGianThuCong * 60000; // Convert phút sang ms
                     nhacNhoTimer.Start();
                     MessageBox.Show($"Đã bật chế độ nhắc nhở thủ công mỗi {caiDatForm.ThoiGianThuCong} phút!", "Thông Báo");
@@ -69,6 +74,23 @@ namespace NhacNhoUongNuoc1
 
             System.Diagnostics.Process.Start("IExplore", "https://www.vinmec.com/vie/bai-viet/khuyen-cao-cua-who-ve-nhu-cau-nuoc-hang-ngay-vi");
 
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            ThongTinForm nhapThongTinForm = new ThongTinForm(nguoiDung);
+            nhapThongTinForm.Hide();
+
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát chương trình không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }
