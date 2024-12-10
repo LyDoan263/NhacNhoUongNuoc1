@@ -44,6 +44,8 @@
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // radTenNguoiDung
@@ -109,7 +111,7 @@
             // txtTenNguoiDung
             // 
             this.txtTenNguoiDung.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTenNguoiDung.Location = new System.Drawing.Point(283, 129);
+            this.txtTenNguoiDung.Location = new System.Drawing.Point(3, 7);
             this.txtTenNguoiDung.Name = "txtTenNguoiDung";
             this.txtTenNguoiDung.Size = new System.Drawing.Size(181, 22);
             this.txtTenNguoiDung.TabIndex = 6;
@@ -117,7 +119,7 @@
             // txtTuoi
             // 
             this.txtTuoi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTuoi.Location = new System.Drawing.Point(283, 172);
+            this.txtTuoi.Location = new System.Drawing.Point(4, 50);
             this.txtTuoi.Name = "txtTuoi";
             this.txtTuoi.Size = new System.Drawing.Size(180, 22);
             this.txtTuoi.TabIndex = 7;
@@ -125,7 +127,7 @@
             // txtChieuCao
             // 
             this.txtChieuCao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtChieuCao.Location = new System.Drawing.Point(283, 224);
+            this.txtChieuCao.Location = new System.Drawing.Point(3, 101);
             this.txtChieuCao.Name = "txtChieuCao";
             this.txtChieuCao.Size = new System.Drawing.Size(181, 22);
             this.txtChieuCao.TabIndex = 8;
@@ -133,7 +135,7 @@
             // txtCanNang
             // 
             this.txtCanNang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCanNang.Location = new System.Drawing.Point(283, 265);
+            this.txtCanNang.Location = new System.Drawing.Point(3, 145);
             this.txtCanNang.Name = "txtCanNang";
             this.txtCanNang.Size = new System.Drawing.Size(181, 22);
             this.txtCanNang.TabIndex = 9;
@@ -142,7 +144,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(283, 312);
+            this.dateTimePicker1.Location = new System.Drawing.Point(0, 186);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(181, 28);
             this.dateTimePicker1.TabIndex = 10;
@@ -188,20 +190,28 @@
             this.linkLabel1.Text = "Nhu cầu nước hằng ngày. ( Đọc thêm. )";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtTenNguoiDung);
+            this.panel1.Controls.Add(this.txtTuoi);
+            this.panel1.Controls.Add(this.txtChieuCao);
+            this.panel1.Controls.Add(this.txtCanNang);
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Location = new System.Drawing.Point(280, 124);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 252);
+            this.panel1.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 532);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnXacNhan);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.txtCanNang);
-            this.Controls.Add(this.txtChieuCao);
-            this.Controls.Add(this.txtTuoi);
-            this.Controls.Add(this.txtTenNguoiDung);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -211,6 +221,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Ứng Dụng Nhắc Nhở Uống Nước";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,6 +245,7 @@
         private System.Windows.Forms.Button btnXacNhan;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

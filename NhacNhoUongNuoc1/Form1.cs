@@ -12,6 +12,7 @@ namespace NhacNhoUongNuoc1
 {
     public partial class Form1 : Form
     {
+       
         private double tongNuocCanUong;
         private double nuocDaUong = 0;
         private Timer nhacNhoTimer;
@@ -34,6 +35,7 @@ namespace NhacNhoUongNuoc1
 
 
         }
+
 
         
         private void NhacNhoTimer_Tick(object sender, EventArgs e)
@@ -103,7 +105,7 @@ namespace NhacNhoUongNuoc1
                 thongTinForm.Show();
 
                 // Ẩn Form1 (nếu cần thiết)
-                this.Hide();
+               
             }
             catch (Exception ex)
             {
@@ -119,6 +121,6 @@ namespace NhacNhoUongNuoc1
         
     }
 
-     
+        
     }
 }
