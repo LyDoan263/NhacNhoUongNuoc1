@@ -50,7 +50,7 @@ namespace NhacNhoUongNuoc1
             {
                 timeNhacNho.Interval = 3600000;
                 timeNhacNho.Start();
-                MessageBox.Show("Đã thiết lập chế độ nhắc nhở sau mỗi giờ!!!!", "CHÚ Ý");
+                MessageBox.Show("Đã thiết lập chế độ nhắc nhở sau mỗi giờ!!!!", "CHÚ Ý",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -59,13 +59,13 @@ namespace NhacNhoUongNuoc1
                 {
                     timeNhacNho.Tag = soPhut * 60;
                     timeNhacNho.Start();
-                    MessageBox.Show("Đã thiết lập chế độ nhắc nhở thủ công", "CHÚ Ý");
+                    MessageBox.Show("Đã thiết lập chế độ nhắc nhở thủ công", "CHÚ Ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
 
             }
             if (!ckb_thuCong.Checked && !ckb_tuDong.Checked) {
-                MessageBox.Show("Vui lòng chọn 1 chế độ nhắc nhở!!!", "Thông Báo!");
+                MessageBox.Show("Vui lòng chọn 1 chế độ nhắc nhở!!!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     
@@ -81,6 +81,11 @@ namespace NhacNhoUongNuoc1
                 timeNhacNho.Stop();
                 MessageBox.Show("Đã tới giờ uống nước");
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("IExplore", "https://www.vinmec.com/vie/bai-viet/khuyen-cao-cua-who-ve-nhu-cau-nuoc-hang-ngay-vi");
         }
     } 
 }
