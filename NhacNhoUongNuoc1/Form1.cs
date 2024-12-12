@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace NhacNhoUongNuoc1
 {
+    
     public partial class Form1 : Form
     {
        
@@ -18,10 +19,15 @@ namespace NhacNhoUongNuoc1
         private Timer nhacNhoTimer;
         //private NguoiDung user;
         private NguoiDung nguoiDung;
-
+        //các biến tĩnh để lưu data
+        public static string SavedDataTen = "";
+        public static string SaveDataTuoi = "";
+        public static string SaveDataChieuCao = "";
+        public static string SaveDataCanNang = "";
+        public static string SaveDatakqLuongNuoc = "";
         public Form1()
         {
-
+            
             InitializeComponent();
             
             nguoiDung = new NguoiDung("Nguyen Van A", 25, 60, 170, 2.0, 3.0);
@@ -32,8 +38,6 @@ namespace NhacNhoUongNuoc1
             nhacNhoTimer.Tick += NhacNhoTimer_Tick;
             nhacNhoTimer.Start();
             nhacNhoTimer.Stop();
-
-
         }
 
 
@@ -153,5 +157,33 @@ namespace NhacNhoUongNuoc1
                 MessageBox.Show("Thông tin nhập không hợp lệ. Vui lòng kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btn_Save_Click(object sender, EventArgs e)// tạo biến tĩnh để lưu data người dùng
+        {
+            SavedDataTen = txtTenNguoiDung.Text;
+          SaveDataTuoi = txtTuoi.Text;
+            SaveDataChieuCao = txtChieuCao.Text;
+            SaveDataCanNang = txtCanNang.Text;
+            SaveDatakqLuongNuoc = txtkqLuongNuoc.Text;
+            //block thông tin
+            txtTenNguoiDung.Enabled = false;
+            txtTuoi.Enabled = false;
+            txtChieuCao.Enabled = false;
+            txtCanNang.Enabled = false;
+            txtkqLuongNuoc.Enabled = false;
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)// form load lưu data dựa trên biến tĩnh
+        {
+            txtTenNguoiDung.Text = Form1.SavedDataTen.;
+            txtTuoi.Text = Form1.SaveDataTuoi;
+          txtChieuCao.Text = Form1.SaveDataChieuCao;
+            txtCanNang.Text = Form1.SaveDataCanNang;
+            txtkqLuongNuoc.Text= Form1.SaveDatakqLuongNuoc;
+         
+        }
+
+  
     }
 }
