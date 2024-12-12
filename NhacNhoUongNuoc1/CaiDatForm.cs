@@ -13,6 +13,7 @@ namespace NhacNhoUongNuoc1
     public partial class CaiDatForm : Form
     {
         private Timer timeNhacNho;
+
         public CaiDatForm()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace NhacNhoUongNuoc1
             timeNhacNho.Tick += TimeNhacNho_Tick;
             timeNhacNho.Start();
             timeNhacNho.Stop();
+           
 
         }
 
@@ -54,13 +56,17 @@ namespace NhacNhoUongNuoc1
             }
             else
             {
-                int soPhut = (int)numThoiGian.Value;
+                int soPhut = (int)numThoiGian.Value;//chế độ thủ công
                 if (soPhut > 0)
                 {
                     timeNhacNho.Tag = soPhut * 60;
                     timeNhacNho.Start();
                     MessageBox.Show("Đã thiết lập chế độ nhắc nhở thủ công", "CHÚ Ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn thời gian để thiết lập nhắc nhở!!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -79,7 +85,7 @@ namespace NhacNhoUongNuoc1
             else
             {
                 timeNhacNho.Stop();
-                MessageBox.Show("Đã tới giờ uống nước");
+                MessageBox.Show("Đã tới giờ uống nước","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
 
