@@ -45,7 +45,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_LuongNuoc = new System.Windows.Forms.Label();
+            this.txtkqLuongNuoc = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // radTenNguoiDung
@@ -146,7 +150,7 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePicker1.Location = new System.Drawing.Point(0, 186);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(181, 28);
+            this.dateTimePicker1.Size = new System.Drawing.Size(184, 28);
             this.dateTimePicker1.TabIndex = 10;
             // 
             // button1
@@ -197,16 +201,45 @@
             this.panel1.Controls.Add(this.txtChieuCao);
             this.panel1.Controls.Add(this.txtCanNang);
             this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Location = new System.Drawing.Point(280, 124);
+            this.panel1.Location = new System.Drawing.Point(303, 124);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 252);
+            this.panel1.Size = new System.Drawing.Size(200, 263);
             this.panel1.TabIndex = 18;
+            // 
+            // lbl_LuongNuoc
+            // 
+            this.lbl_LuongNuoc.AutoSize = true;
+            this.lbl_LuongNuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_LuongNuoc.Location = new System.Drawing.Point(45, 351);
+            this.lbl_LuongNuoc.Name = "lbl_LuongNuoc";
+            this.lbl_LuongNuoc.Size = new System.Drawing.Size(226, 25);
+            this.lbl_LuongNuoc.TabIndex = 19;
+            this.lbl_LuongNuoc.Text = "Lượng Nước Tối Thiểu";
+            // 
+            // txtkqLuongNuoc
+            // 
+            this.txtkqLuongNuoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtkqLuongNuoc.Location = new System.Drawing.Point(0, 11);
+            this.txtkqLuongNuoc.Name = "txtkqLuongNuoc";
+            this.txtkqLuongNuoc.Size = new System.Drawing.Size(184, 22);
+            this.txtkqLuongNuoc.TabIndex = 11;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.txtkqLuongNuoc);
+            this.panel2.Enabled = false;
+            this.panel2.Location = new System.Drawing.Point(303, 344);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 36);
+            this.panel2.TabIndex = 20;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 532);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.lbl_LuongNuoc);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label7);
@@ -223,6 +256,8 @@
             this.Text = "Ứng Dụng Nhắc Nhở Uống Nước";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,6 +281,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbl_LuongNuoc;
+        private System.Windows.Forms.TextBox txtkqLuongNuoc;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

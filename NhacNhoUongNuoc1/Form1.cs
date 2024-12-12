@@ -74,20 +74,65 @@ namespace NhacNhoUongNuoc1
         //    nhacNhoTimer.Stop();
         //}
 
+       // private void btnXacNhan_Click(object sender, EventArgs e)
+       // {
+       //     if (string.IsNullOrWhiteSpace(txtTenNguoiDung.Text) ||
+       //string.IsNullOrWhiteSpace(txtTuoi.Text) ||
+       //string.IsNullOrWhiteSpace(txtCanNang.Text) ||
+       //string.IsNullOrWhiteSpace(txtChieuCao.Text))
+       //     {
+       //         MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+       //         return;
+       //     }
+
+       //     try
+       //     {
+
+       //         // Lấy thông tin từ các TextBox
+       //         string ten = txtTenNguoiDung.Text;
+       //         int tuoi = int.Parse(txtTuoi.Text);
+       //         double canNang = double.Parse(txtCanNang.Text);
+       //         double chieuCao = double.Parse(txtChieuCao.Text);
+       //         // Tính tổng lượng nước cần uống
+       //         tongNuocCanUong = TinhTongNuocCanUong(canNang);
+
+       //         // Tính lượng nước cần uống (theo cân nặng)
+       //         double litNuoc = canNang * 0.04;
+       //         // Tạo đối tượng NguoiDung
+       //         NguoiDung nguoiDung = new NguoiDung (ten, tuoi, canNang, chieuCao, litNuoc,0.0);
+       //         // Mở form ThongTinForm và truyền đối tượng NguoiDung
+       //         ThongTinForm thongTinForm = new ThongTinForm(nguoiDung);
+       //         thongTinForm.Show();
+
+       //         // Ẩn Form1 (nếu cần thiết)
+               
+       //     }
+       //     catch (Exception ex)
+       //     {
+       //         MessageBox.Show("Thông tin nhập không hợp lệ. Vui lòng kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+       //     }
+       // }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+           
+        
+            System.Diagnostics.Process.Start("IExplore", "https://www.vinmec.com/vie/bai-viet/khuyen-cao-cua-who-ve-nhu-cau-nuoc-hang-ngay-vi");
+        
+    }
+
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtTenNguoiDung.Text) ||
-       string.IsNullOrWhiteSpace(txtTuoi.Text) ||
-       string.IsNullOrWhiteSpace(txtCanNang.Text) ||
-       string.IsNullOrWhiteSpace(txtChieuCao.Text))
+     string.IsNullOrWhiteSpace(txtTuoi.Text) ||
+     string.IsNullOrWhiteSpace(txtCanNang.Text) ||
+     string.IsNullOrWhiteSpace(txtChieuCao.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             try
             {
-
                 // Lấy thông tin từ các TextBox
                 string ten = txtTenNguoiDung.Text;
                 int tuoi = int.Parse(txtTuoi.Text);
@@ -98,29 +143,15 @@ namespace NhacNhoUongNuoc1
 
                 // Tính lượng nước cần uống (theo cân nặng)
                 double litNuoc = canNang * 0.04;
-                // Tạo đối tượng NguoiDung
-                NguoiDung nguoiDung = new NguoiDung (ten, tuoi, canNang, chieuCao, litNuoc,0.0);
-                // Mở form ThongTinForm và truyền đối tượng NguoiDung
-                ThongTinForm thongTinForm = new ThongTinForm(nguoiDung);
-                thongTinForm.Show();
+                txtkqLuongNuoc.Text = litNuoc.ToString();
 
-                // Ẩn Form1 (nếu cần thiết)
-               
+
+             
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Thông tin nhập không hợp lệ. Vui lòng kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-           
-        
-            System.Diagnostics.Process.Start("IExplore", "https://www.vinmec.com/vie/bai-viet/khuyen-cao-cua-who-ve-nhu-cau-nuoc-hang-ngay-vi");
-        
-    }
-
-        
     }
 }
