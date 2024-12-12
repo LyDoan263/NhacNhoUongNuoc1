@@ -176,7 +176,7 @@ namespace NhacNhoUongNuoc1
 
         private void Form1_Load(object sender, EventArgs e)// form load lưu data dựa trên biến tĩnh
         {
-            txtTenNguoiDung.Text = Form1.SavedDataTen.;
+            txtTenNguoiDung.Text = Form1.SavedDataTen;
             txtTuoi.Text = Form1.SaveDataTuoi;
           txtChieuCao.Text = Form1.SaveDataChieuCao;
             txtCanNang.Text = Form1.SaveDataCanNang;

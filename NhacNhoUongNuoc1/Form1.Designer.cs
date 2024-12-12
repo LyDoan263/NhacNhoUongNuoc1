@@ -166,9 +166,9 @@
             // btnXacNhan
             // 
             this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXacNhan.Location = new System.Drawing.Point(140, 410);
+            this.btnXacNhan.Location = new System.Drawing.Point(118, 410);
             this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(131, 28);
+            this.btnXacNhan.Size = new System.Drawing.Size(131, 36);
             this.btnXacNhan.TabIndex = 13;
             this.btnXacNhan.Text = "Xác Nhận";
             this.btnXacNhan.UseVisualStyleBackColor = true;
@@ -206,7 +206,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 263);
             this.panel1.TabIndex = 18;
-
             // 
             // lbl_LuongNuoc
             // 
@@ -238,9 +237,9 @@
             // btn_Save
             // 
             this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_Save.Location = new System.Drawing.Point(307, 410);
+            this.btn_Save.Location = new System.Drawing.Point(335, 410);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(87, 28);
+            this.btn_Save.Size = new System.Drawing.Size(92, 36);
             this.btn_Save.TabIndex = 21;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = true;
