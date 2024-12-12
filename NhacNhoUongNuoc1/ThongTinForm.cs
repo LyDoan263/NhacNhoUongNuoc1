@@ -32,6 +32,11 @@ namespace NhacNhoUongNuoc1
         }
         public ThongTinForm(Form1 form)
         { Form1 = form; }
+
+        public ThongTinForm()
+        {
+        }
+
         private void HienThiThongTin()
         {
             lblTen.Text = nguoiDung.Ten;

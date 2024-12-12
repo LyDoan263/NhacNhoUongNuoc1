@@ -12,66 +12,76 @@ namespace NhacNhoUongNuoc1
 {
     public partial class CaiDatForm : Form
     {
+        private Timer timeNhacNho;
         public CaiDatForm()
         {
             InitializeComponent();
-        }
-            private void chkThuCong_CheckedChanged(object sender, EventArgs e)
-        {
-            // Nếu chọn chế độ thủ công, hiển thị NumericUpDown
-            numThoiGian.Enabled = chkThuCong.Checked;
-           
+            timeNhacNho = new Timer();
+            timeNhacNho.Interval = 1000;
+            timeNhacNho.Tick += TimeNhacNho_Tick;
+            timeNhacNho.Start();
+            timeNhacNho.Stop();
 
-            // Đảm bảo chế độ tự động không được chọn cùng lúc
-            if (chkThuCong.Checked)
-                chkTuDong.Checked = false;
         }
-        private void chkTuDong_CheckedChanged(object sender, EventArgs e)
-        {
-            // Đảm bảo chế độ thủ công không được chọn cùng lúc
-            if (chkTuDong.Checked)
-                chkThuCong.Checked = false;
 
-            // Vô hiệu hóa NumericUpDown nếu chọn tự động
-            numThoiGian.Enabled = !chkTuDong.Checked;
+        private void ckb_tuDong_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_tuDong.Checked)
+                ckb_thuCong.Checked = false;
+            numThoiGian.Enabled = !ckb_tuDong.Checked;
+        }
+
+        private void ckb_thuCong_CheckedChanged(object sender, EventArgs e)
+        {
+            numThoiGian.Enabled = ckb_thuCong.Checked;
+
+            if (ckb_thuCong.Checked)
+            {
+                ckb_tuDong.Checked = false;
+
+            }
         }
         public bool IsTuDong { get; private set; } // Lưu trạng thái Tự Động
         public int ThoiGianThuCong { get; private set; } // Thời gian nhắc nhở (thủ công)
-
-        
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
-            if (chkTuDong.Checked)
+            CaiDatForm caiDat = new CaiDatForm();
+            if (ckb_tuDong.Checked)//chế độ tự động
             {
-                IsTuDong = true; // Bật chế độ tự động
-                
-            }
-            else if (chkThuCong.Checked)
-            {
-                IsTuDong = false; // Chế độ thủ công
-                ThoiGianThuCong = (int)numThoiGian.Value; // Lấy giá trị từ NumericUpDown
-               
-
+                timeNhacNho.Interval = 3600000;
+                timeNhacNho.Start();
+                MessageBox.Show("Đã thiết lập chế độ nhắc nhở sau mỗi giờ!!!!", "CHÚ Ý");
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một chế độ nhắc nhở!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                int soPhut = (int)numThoiGian.Value;
+                if (soPhut > 0)
+                {
+                    timeNhacNho.Tag = soPhut * 60;
+                    timeNhacNho.Start();
+                    MessageBox.Show("Đã thiết lập chế độ nhắc nhở thủ công", "CHÚ Ý");
+
+                }
+
             }
-
-            this.DialogResult = DialogResult.OK; // Trả về kết quả OK
-            this.Close(); // Đóng CaiDatForm
+            if (!ckb_thuCong.Checked && !ckb_tuDong.Checked) {
+                MessageBox.Show("Vui lòng chọn 1 chế độ nhắc nhở!!!", "Thông Báo!");
+            }
         }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    
+        private void TimeNhacNho_Tick(object sender, EventArgs e)//sự kiện tick
         {
-
-
-            System.Diagnostics.Process.Start("IExplore", "https://www.vinmec.com/vie/bai-viet/khuyen-cao-cua-who-ve-nhu-cau-nuoc-hang-ngay-vi");
-
+            int timeConLai = (int)timeNhacNho.Tag;
+            if (timeConLai > 0)
+            {
+                timeNhacNho.Tag = timeConLai - 1;
+            }
+            else
+            {
+                timeNhacNho.Stop();
+                MessageBox.Show("Đã tới giờ uống nước");
+            }
         }
-
-        
-    }
+    } 
 }
 
