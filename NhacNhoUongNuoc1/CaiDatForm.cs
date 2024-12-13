@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace NhacNhoUongNuoc1
 {
+
     public partial class CaiDatForm : Form
     {
         private Timer timeNhacNho;
@@ -92,6 +93,13 @@ namespace NhacNhoUongNuoc1
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("IExplore", "https://www.vinmec.com/vie/bai-viet/khuyen-cao-cua-who-ve-nhu-cau-nuoc-hang-ngay-vi");
+        }
+
+        private void CaiDatForm_Load(object sender, EventArgs e)
+        {
+            txt_NuocCaiDat.Text = Form1.SaveDataNuoc;
+           
+            
         }
     } 
 }

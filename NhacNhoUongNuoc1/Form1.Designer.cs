@@ -252,33 +252,35 @@
             // lbl_MucTieu
             // 
             this.lbl_MucTieu.AutoSize = true;
-            this.lbl_MucTieu.Location = new System.Drawing.Point(549, 188);
+            this.lbl_MucTieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_MucTieu.Location = new System.Drawing.Point(514, 188);
             this.lbl_MucTieu.Name = "lbl_MucTieu";
-            this.lbl_MucTieu.Size = new System.Drawing.Size(125, 16);
+            this.lbl_MucTieu.Size = new System.Drawing.Size(186, 22);
             this.lbl_MucTieu.TabIndex = 22;
             this.lbl_MucTieu.Text = "Mục Tiêu Của Ngày";
             // 
             // pcb_MucTieu
             // 
-            this.pcb_MucTieu.Location = new System.Drawing.Point(552, 240);
+            this.pcb_MucTieu.Location = new System.Drawing.Point(518, 238);
             this.pcb_MucTieu.Name = "pcb_MucTieu";
-            this.pcb_MucTieu.Size = new System.Drawing.Size(230, 35);
+            this.pcb_MucTieu.Size = new System.Drawing.Size(324, 35);
             this.pcb_MucTieu.TabIndex = 23;
             // 
             // txt_Nuoc
             // 
             this.txt_Nuoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_Nuoc.Location = new System.Drawing.Point(690, 182);
+            this.txt_Nuoc.Location = new System.Drawing.Point(728, 188);
             this.txt_Nuoc.Name = "txt_Nuoc";
-            this.txt_Nuoc.Size = new System.Drawing.Size(56, 22);
+            this.txt_Nuoc.Size = new System.Drawing.Size(68, 22);
             this.txt_Nuoc.TabIndex = 24;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(761, 188);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(808, 188);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 16);
+            this.label1.Size = new System.Drawing.Size(34, 25);
             this.label1.TabIndex = 25;
             this.label1.Text = "ml";
             // 
@@ -286,7 +288,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 532);
+            this.ClientSize = new System.Drawing.Size(854, 624);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_Nuoc);
             this.Controls.Add(this.pcb_MucTieu);

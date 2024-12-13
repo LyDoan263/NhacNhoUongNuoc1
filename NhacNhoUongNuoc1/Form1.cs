@@ -89,7 +89,7 @@ namespace NhacNhoUongNuoc1
                 tongNuocCanUong = TinhTongNuocCanUong(canNang);
 
                 // Tính lượng nước cần uống (theo cân nặng)
-                double litNuoc = canNang * 0.04;
+                double litNuoc = canNang * 40;
                 txtkqLuongNuoc.Text = litNuoc.ToString();
                 txt_Nuoc.Text = txtkqLuongNuoc.Text;
                 
