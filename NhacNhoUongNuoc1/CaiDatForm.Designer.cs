@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CaiDatForm));
             this.ckb_tuDong = new System.Windows.Forms.CheckBox();
             this.ckb_thuCong = new System.Windows.Forms.CheckBox();
@@ -39,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pcb_MucTieuCaiDat = new System.Windows.Forms.ProgressBar();
             this.txt_NuocCaiDat = new System.Windows.Forms.TextBox();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numThoiGian)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +54,7 @@
             this.ckb_tuDong.TabIndex = 0;
             this.ckb_tuDong.Text = "Nhắc Nhớ Tự Động";
             this.ckb_tuDong.UseVisualStyleBackColor = true;
-            this.ckb_tuDong.CheckedChanged += new System.EventHandler(this.ckb_tuDong_CheckedChanged);
+            this.ckb_tuDong.CheckedChanged += new System.EventHandler(this.ckb_tuDong_CheckedChanged_1);
             // 
             // ckb_thuCong
             // 
@@ -64,7 +66,7 @@
             this.ckb_thuCong.TabIndex = 1;
             this.ckb_thuCong.Text = "Nhắc Nhở Thủ Công ( phút )";
             this.ckb_thuCong.UseVisualStyleBackColor = true;
-            this.ckb_thuCong.CheckedChanged += new System.EventHandler(this.ckb_thuCong_CheckedChanged);
+            this.ckb_thuCong.CheckedChanged += new System.EventHandler(this.ckb_thuCong_CheckedChanged_1);
             // 
             // numThoiGian
             // 
@@ -93,7 +95,7 @@
             this.btnXacNhan.TabIndex = 4;
             this.btnXacNhan.Text = "Xác Nhận";
             this.btnXacNhan.UseVisualStyleBackColor = true;
-            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click_1);
             // 
             // linkLabel1
             // 
@@ -104,7 +106,7 @@
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Nhu cầu uống nước hằng ngày ( Đọc thêm.)";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
             // label2
             // 
@@ -140,6 +142,11 @@
             this.txt_NuocCaiDat.Name = "txt_NuocCaiDat";
             this.txt_NuocCaiDat.Size = new System.Drawing.Size(68, 22);
             this.txt_NuocCaiDat.TabIndex = 9;
+            this.txt_NuocCaiDat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // CaiDatForm
             // 
@@ -160,7 +167,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CaiDatForm";
             this.Text = "Custom Time";
-            this.Load += new System.EventHandler(this.CaiDatForm_Load);
+            this.Load += new System.EventHandler(this.CaiDatForm_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.numThoiGian)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -179,5 +186,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ProgressBar pcb_MucTieuCaiDat;
         private System.Windows.Forms.TextBox txt_NuocCaiDat;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Timer timerMessBox;
+        
     }
 }

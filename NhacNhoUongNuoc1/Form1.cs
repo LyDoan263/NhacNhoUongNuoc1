@@ -26,6 +26,7 @@ namespace NhacNhoUongNuoc1
         public static string SaveDataCanNang = "";
         public static string SaveDatakqLuongNuoc = "";
         public static string SaveDataNuoc = "";
+        public double litNuo;
         public Form1()
         {
             
@@ -120,7 +121,7 @@ namespace NhacNhoUongNuoc1
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e)
         {
             txtTenNguoiDung.Text=Form1.SavedDataTen;
             txtTuoi.Text =Form1.SaveDataTuoi;
