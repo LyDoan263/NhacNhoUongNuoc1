@@ -142,6 +142,7 @@
             this.Controls.Add(this.pnl_Body);
             this.Controls.Add(this.pnl_Top);
             this.Controls.Add(this.pnl_Left);
+            this.IsMdiContainer = true;
             this.Name = "formChinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "formChinh";

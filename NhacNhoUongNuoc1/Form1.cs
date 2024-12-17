@@ -12,8 +12,7 @@ namespace NhacNhoUongNuoc1
 {
     
     public partial class Form1 : Form
-    {
-       
+    {       
         private double tongNuocCanUong;
         private double nuocDaUong = 0;
         private Timer nhacNhoTimer;
@@ -25,13 +24,11 @@ namespace NhacNhoUongNuoc1
         public static string SaveDataChieuCao = "";
         public static string SaveDataCanNang = "";
         public static string SaveDatakqLuongNuoc = "";
-        public static string SaveDataNuoc = "";
-        public double litNuo;
+        public static string SaveDataNuoc = "0";
+        public double litNuoc;
         public Form1()
-        {
-            
-            InitializeComponent();
-            
+        {            
+           InitializeComponent();           
             nguoiDung = new NguoiDung("Nguyen Van A", 25, 60, 170, 2.0, 3.0);
             nhacNhoTimer = new Timer
             {
@@ -40,10 +37,7 @@ namespace NhacNhoUongNuoc1
             nhacNhoTimer.Tick += NhacNhoTimer_Tick;
             nhacNhoTimer.Start();
             nhacNhoTimer.Stop();
-        }
-
-
-        
+        }        
         private void NhacNhoTimer_Tick(object sender, EventArgs e)
         {
             // Thông báo nhắc nhở
@@ -58,23 +52,17 @@ namespace NhacNhoUongNuoc1
             // Giả sử mỗi kg cân nặng cần 40ml nước
             return canNang * 40;
         }
-
-      
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-           
-        
+        {        
             System.Diagnostics.Process.Start("IExplore", "https://www.vinmec.com/vie/bai-viet/khuyen-cao-cua-who-ve-nhu-cau-nuoc-hang-ngay-vi");
         
     }
-
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtTenNguoiDung.Text) ||
      string.IsNullOrWhiteSpace(txtTuoi.Text) ||
      string.IsNullOrWhiteSpace(txtCanNang.Text) ||
-     string.IsNullOrWhiteSpace(txtChieuCao.Text))
+     string.IsNullOrWhiteSpace(txtChieuCao.Text) )
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -88,24 +76,21 @@ namespace NhacNhoUongNuoc1
                 double chieuCao = double.Parse(txtChieuCao.Text);
                 // Tính tổng lượng nước cần uống
                 tongNuocCanUong = TinhTongNuocCanUong(canNang);
-
                 // Tính lượng nước cần uống (theo cân nặng)
                 double litNuoc = canNang * 40;
-                txtkqLuongNuoc.Text = litNuoc.ToString();
-                txt_Nuoc.Text = txtkqLuongNuoc.Text;
-                
-
-
-
+                txtkqLuongNuoc.Text = litNuoc.ToString();               
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Thông tin nhập không hợp lệ. Vui lòng kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btn_Save_Click(object sender, EventArgs e)// tạo biến tĩnh để lưu data người dùng
         {
+            if (int.Parse(txt_Nuoc.Text) <= 0)
+            {
+                MessageBox.Show("Bạn cần nhập mục tiêu của ngày!!!","Thông Báo",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             SavedDataTen = txtTenNguoiDung.Text;
           SaveDataTuoi = txtTuoi.Text;
             SaveDataChieuCao = txtChieuCao.Text;
@@ -120,7 +105,6 @@ namespace NhacNhoUongNuoc1
             txtkqLuongNuoc.Enabled = false;
 
         }
-
         public void Form1_Load(object sender, EventArgs e)
         {
             txtTenNguoiDung.Text=Form1.SavedDataTen;
@@ -128,7 +112,7 @@ namespace NhacNhoUongNuoc1
             txtChieuCao.Text = Form1.SaveDataChieuCao;
             txtCanNang.Text = Form1.SaveDataCanNang;
             txtkqLuongNuoc.Text=Form1.SaveDatakqLuongNuoc;
-            txt_Nuoc.Text = Form1.SaveDataNuoc;
+            txt_Nuoc.Text = Form1.SaveDataNuoc;      
         }
         
     }

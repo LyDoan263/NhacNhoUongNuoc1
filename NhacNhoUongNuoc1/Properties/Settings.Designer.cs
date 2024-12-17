@@ -26,5 +26,12 @@ namespace NhacNhoUongNuoc1.Properties
                 return defaultInstance;
             }
         }
+
+        public bool Savedckb_tuDongValue { get; internal set; }
+        public decimal SavednumThoiGianValue { get; internal set; }
+        public bool Savedckb_thuCongValue { get; internal set; }
+        public object SaveListLichSuValue { get; internal set; }
+        public int SavedDaUongValue { get; internal set; }
+        public string SavedNuocDangUongValue { get; internal set; }
     }
 }

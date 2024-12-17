@@ -38,9 +38,12 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pcb_MucTieuCaiDat = new System.Windows.Forms.ProgressBar();
             this.txt_NuocCaiDat = new System.Windows.Forms.TextBox();
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_NuocDangUong = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numThoiGian)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,7 +115,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(514, 188);
+            this.label2.Location = new System.Drawing.Point(580, 182);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(186, 22);
             this.label2.TabIndex = 6;
@@ -122,23 +125,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(808, 188);
+            this.label3.Location = new System.Drawing.Point(758, 231);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 22);
             this.label3.TabIndex = 7;
             this.label3.Text = "ml";
             // 
-            // pcb_MucTieuCaiDat
-            // 
-            this.pcb_MucTieuCaiDat.Location = new System.Drawing.Point(518, 238);
-            this.pcb_MucTieuCaiDat.Name = "pcb_MucTieuCaiDat";
-            this.pcb_MucTieuCaiDat.Size = new System.Drawing.Size(324, 35);
-            this.pcb_MucTieuCaiDat.TabIndex = 8;
-            // 
             // txt_NuocCaiDat
             // 
             this.txt_NuocCaiDat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_NuocCaiDat.Location = new System.Drawing.Point(728, 188);
+            this.txt_NuocCaiDat.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_NuocCaiDat.Location = new System.Drawing.Point(684, 231);
             this.txt_NuocCaiDat.Name = "txt_NuocCaiDat";
             this.txt_NuocCaiDat.Size = new System.Drawing.Size(68, 22);
             this.txt_NuocCaiDat.TabIndex = 9;
@@ -148,14 +145,56 @@
             // 
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
+            // btn_Save
+            // 
+            this.btn_Save.Location = new System.Drawing.Point(85, 432);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(195, 23);
+            this.btn_Save.TabIndex = 14;
+            this.btn_Save.Text = "SAVE";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(316, 358);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(480, 132);
+            this.flowLayoutPanel1.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(658, 230);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(20, 29);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "/";
+            // 
+            // txt_NuocDangUong
+            // 
+            this.txt_NuocDangUong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_NuocDangUong.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_NuocDangUong.Location = new System.Drawing.Point(584, 231);
+            this.txt_NuocDangUong.Name = "txt_NuocDangUong";
+            this.txt_NuocDangUong.Size = new System.Drawing.Size(68, 22);
+            this.txt_NuocDangUong.TabIndex = 18;
+            this.txt_NuocDangUong.Text = "0";
+            this.txt_NuocDangUong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // CaiDatForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(854, 624);
+            this.Controls.Add(this.txt_NuocDangUong);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.txt_NuocCaiDat);
-            this.Controls.Add(this.pcb_MucTieuCaiDat);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabel1);
@@ -184,12 +223,15 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ProgressBar pcb_MucTieuCaiDat;
         private System.Windows.Forms.TextBox txt_NuocCaiDat;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Timer timerMessBox;
-        
+        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_NuocDangUong;
+        private System.Windows.Forms.Timer timer4;
     }
 }
