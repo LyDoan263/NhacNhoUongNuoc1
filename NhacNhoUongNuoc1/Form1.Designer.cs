@@ -50,7 +50,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_Save = new System.Windows.Forms.Button();
             this.lbl_MucTieu = new System.Windows.Forms.Label();
-            this.pcb_MucTieu = new System.Windows.Forms.ProgressBar();
             this.txt_Nuoc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -259,13 +258,6 @@
             this.lbl_MucTieu.TabIndex = 22;
             this.lbl_MucTieu.Text = "Mục Tiêu Của Ngày";
             // 
-            // pcb_MucTieu
-            // 
-            this.pcb_MucTieu.Location = new System.Drawing.Point(518, 238);
-            this.pcb_MucTieu.Name = "pcb_MucTieu";
-            this.pcb_MucTieu.Size = new System.Drawing.Size(324, 35);
-            this.pcb_MucTieu.TabIndex = 23;
-            // 
             // txt_Nuoc
             // 
             this.txt_Nuoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -291,7 +283,6 @@
             this.ClientSize = new System.Drawing.Size(854, 624);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_Nuoc);
-            this.Controls.Add(this.pcb_MucTieu);
             this.Controls.Add(this.lbl_MucTieu);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.panel2);
@@ -343,7 +334,6 @@
         private System.Windows.Forms.TextBox txtChieuCao;
         private System.Windows.Forms.TextBox txtCanNang;
         private System.Windows.Forms.Label lbl_MucTieu;
-        private System.Windows.Forms.ProgressBar pcb_MucTieu;
         private System.Windows.Forms.TextBox txt_Nuoc;
         private System.Windows.Forms.Label label1;
     }

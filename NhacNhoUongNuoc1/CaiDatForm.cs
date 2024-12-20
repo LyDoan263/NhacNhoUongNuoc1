@@ -36,15 +36,19 @@ namespace NhacNhoUongNuoc1
             ckb_tuDong.Checked = Properties.Settings.Default.Savedckb_tuDongValue;
             numThoiGian.Value = Properties.Settings.Default.SavednumThoiGianValue;
             txt_NuocDangUong.Text = Properties.Settings.Default.SavedNuocDangUongValue;
-            var savedItems = Properties.Settings.Default.SaveListLichSuValue;         
-            foreach (var time in timeHistory)
+            var savedItems = Properties.Settings.Default.SaveListLichSuValue as string;
+            if (!string.IsNullOrEmpty(savedItems))
             {
-                // Tạo một Label mới để hiển thị mốc thời gian
-                Label timeLabel = new Label();
-                timeLabel.Text = time;
-                timeLabel.AutoSize = true;
-                // Thêm Label vào FlowLayoutPanel (Giả sử FlowLayoutPanel của bạn là flowLayoutPanel)
-                flowLayoutPanel1.Controls.Add(timeLabel);
+                timeHistory = savedItems.Split(';').ToList();
+                foreach (var time in timeHistory)
+                {
+                    Label timeLabel = new Label
+                    {
+                        Text = time,
+                        AutoSize = true
+                    };
+                    flowLayoutPanel1.Controls.Add(timeLabel);
+                }
             }
         }
         private void ckb_tuDong_CheckedChanged_1(object sender, EventArgs e)
@@ -69,7 +73,7 @@ namespace NhacNhoUongNuoc1
                     int soPhut = (int)numThoiGian.Value;
                     MessageBox.Show("Đã thiết lập chế độ nhắc nhở thủ công", "CHÚ Ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     NuocDaUong = 0;
-                    timer3.Interval = soPhut * 1000;
+                    timer3.Interval = soPhut * 60*1000;
                     timer3.Start();
                 }
                 else
@@ -100,37 +104,117 @@ namespace NhacNhoUongNuoc1
             System.Diagnostics.Process.Start("IExplore", "https://www.vinmec.com/vie/bai-viet/khuyen-cao-cua-who-ve-nhu-cau-nuoc-hang-ngay-vi");
         }
 
-        private void timer3_Tick(object sender, EventArgs e)
+        private Panel notificationPanel;
+        private Label lblNotification;
+        private System.Windows.Forms.Button btnOK;
+        private bool isReminderActive = false;
+        private async void timer3_Tick(object sender, EventArgs e)
         {
 
             if (NuocDaUong >= MaxNuoc)
             {
-                // Dừng Timer nếu đã uống đủ nước
                 timer3.Stop();
-              MessageBox.Show("Bạn đã uống đủ nước. Không còn nhắc nhở nữa!");
+                MessageBox.Show("Bạn đã uống đủ nước. Không còn nhắc nhở nữa!");
                 return;
             }
-            if (NuocDaUong < MaxNuoc)
+            if (NuocDaUong < MaxNuoc && !isReminderActive)
             {
-                { // Gửi thông báo nhắc nhở uống nước
-                    DialogResult result = MessageBox.Show("Nhớ uống nước nhé!", "Nhắc nhở", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (result == DialogResult.OK)
+                isReminderActive = true; // Đánh dấu thông báo đang hoạt động
+                string timeStamp = DateTime.Now.ToString("HH:mm:ss ddd/MM/yyyy");
+
+                // Hiển thị thông báo
+                ShowNotification("Tới giờ uống nước rồi!!!");
+
+                bool userResponded = false;
+                btnOK.Click += (s, args) =>
+                {
+                    userResponded = true;
+                    HideNotification();
+                };
+
+               
+                await Task.Delay(30000);//delay 30s
+
+                if (userResponded)
+                {
+                    // Người dùng nhấn OK
+                    NuocDaUong += NuocUongVao;
+                    txt_NuocDangUong.Text = NuocDaUong.ToString();
+                    timeHistory.Add($"Mốc: {timeStamp} -Hoàn thành");
+
+                    Label timeLabel = new Label
                     {
-                        // Tăng lượng nước đã uống mỗi lần nhấn OK                     
-                        NuocDaUong += NuocUongVao;
-                        txt_NuocDangUong.Text = NuocDaUong.ToString();
-                        string timeStamp = DateTime.Now.ToString("HH:mm:ss ddd/MM/yyyy");
-                        //timeHistory.Add("Mốc: " + timeStamp );
-                        Label timeLabel = new Label();
-                        timeLabel.Text = "Mốc time : "+timeStamp ;
-                        timeLabel.AutoSize = true;
-                        flowLayoutPanel1.Controls.Add(timeLabel);                  
-                    }
+                        Text = $"Mốc: {timeStamp} - Hoàn thành",
+                        AutoSize = true
+                    };
+                    flowLayoutPanel1.Controls.Add(timeLabel);
                 }
+                else
+                {
+                    // Người dùng không nhấn OK trong thời gian cho phép
+                    timeHistory.Add($"Mốc: {timeStamp} - Miss");
+
+                    Label timeLabel = new Label
+                    {
+                        Text = $"Mốc: {timeStamp} - Miss",
+                        AutoSize = true
+                    };
+                    flowLayoutPanel1.Controls.Add(timeLabel);
+                }
+
+                HideNotification(); // Đảm bảo thông báo được ẩn
+                isReminderActive = false; // Đặt lại trạng thái thông báo
             }
 
         }
-    
+        private void ShowNotification(string message)
+        {
+            if (notificationPanel == null)
+            {
+                // Tạo Panel nếu chưa có
+                notificationPanel = new Panel
+                {
+                    Size = new Size(300, 100),
+                    BackColor = Color.LightYellow,
+                    BorderStyle = BorderStyle.FixedSingle,
+                    Visible = false
+                };
+
+                lblNotification = new Label
+                {
+                    AutoSize = false,
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Dock = DockStyle.Top,
+                    Height = 50
+                };
+
+                btnOK = new System.Windows.Forms.Button
+                {
+                    Text = "OK",
+                    Dock = DockStyle.Bottom,
+                    Height = 30
+                };
+
+                notificationPanel.Controls.Add(lblNotification);
+                notificationPanel.Controls.Add(btnOK);
+
+                // Thêm vào Form
+                this.Controls.Add(notificationPanel);
+                notificationPanel.BringToFront();
+            }
+
+            lblNotification.Text = message;
+            notificationPanel.Location = new Point((this.Width - notificationPanel.Width) / 2, (this.Height - notificationPanel.Height) / 2);
+            notificationPanel.Visible = true;
+        }
+        private void HideNotification()
+        {
+            if (notificationPanel != null)
+            {
+                notificationPanel.Visible = false;
+            }
+        }
+
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
@@ -138,22 +222,11 @@ namespace NhacNhoUongNuoc1
             Properties.Settings.Default.Savedckb_thuCongValue = ckb_thuCong.Checked;
             Properties.Settings.Default.SavednumThoiGianValue = numThoiGian.Value; 
             Properties.Settings.Default.SavedNuocDangUongValue = txt_NuocDangUong.Text;
-            //////var selectedItems = new System.Collections.Specialized.StringCollection();
-            //////foreach (Control control in flowLayoutPanel1.Controls)
-            //////{
-            //////    if (control is Label label)  // Kiểm tra xem điều khiển có phải là Label không
-            //////    {
-            //////        selectedItems.Add(label.Text);  // Lưu văn bản của Label vào StringCollection
-            //////    }
-            //////}
-            //////Properties.Settings.Default.SaveListLichSuValue = selectedItems;
+            Properties.Settings.Default.SaveListLichSuValue = string.Join(";", timeHistory);
             Properties.Settings.Default.Save();
         }
 
-        private void timer4_Tick(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
 

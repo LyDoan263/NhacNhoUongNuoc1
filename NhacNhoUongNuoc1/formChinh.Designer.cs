@@ -37,9 +37,15 @@
             this.pnl_Top = new System.Windows.Forms.Panel();
             this.lbl_Top = new System.Windows.Forms.Label();
             this.pnl_Body = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pnl_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_Top.SuspendLayout();
+            this.pnl_Body.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Left
@@ -119,7 +125,7 @@
             this.lbl_Top.AutoSize = true;
             this.lbl_Top.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbl_Top.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbl_Top.Location = new System.Drawing.Point(59, 43);
+            this.lbl_Top.Location = new System.Drawing.Point(6, 43);
             this.lbl_Top.Name = "lbl_Top";
             this.lbl_Top.Size = new System.Drawing.Size(82, 29);
             this.lbl_Top.TabIndex = 0;
@@ -128,11 +134,56 @@
             // pnl_Body
             // 
             this.pnl_Body.BackColor = System.Drawing.Color.SteelBlue;
+            this.pnl_Body.Controls.Add(this.label1);
+            this.pnl_Body.Controls.Add(this.linkLabel1);
+            this.pnl_Body.Controls.Add(this.label3);
+            this.pnl_Body.Controls.Add(this.pictureBox2);
             this.pnl_Body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Body.Location = new System.Drawing.Point(126, 100);
             this.pnl_Body.Name = "pnl_Body";
             this.pnl_Body.Size = new System.Drawing.Size(870, 568);
             this.pnl_Body.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(-3, 52);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(870, 469);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.Location = new System.Drawing.Point(22, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(637, 32);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Chào bạn! Hãy lên lịch uống nước ngày hôm nay nhé!";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(133, 524);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 16);
+            this.label3.TabIndex = 2;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(529, 534);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(280, 16);
+            this.linkLabel1.TabIndex = 3;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Thông tin sức khỏe và lợi ích khi uống đủ nước.";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // formChinh
             // 
@@ -150,6 +201,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl_Top.ResumeLayout(false);
             this.pnl_Top.PerformLayout();
+            this.pnl_Body.ResumeLayout(false);
+            this.pnl_Body.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,5 +218,9 @@
         private System.Windows.Forms.Button btn_LichSu;
         private System.Windows.Forms.Button btn_ThongTin;
         private System.Windows.Forms.Label lbl_Top;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

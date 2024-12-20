@@ -67,5 +67,10 @@ namespace NhacNhoUongNuoc1
             }
             lbl_Top.Text = "Home";
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("IExplore", "https://suckhoedoisong.vn/tim-kiem.htm?keywords=U%E1%BB%91ng%20%C4%91%E1%BB%A7%20n%C6%B0%E1%BB%9Bc");
+        }
     }
 }

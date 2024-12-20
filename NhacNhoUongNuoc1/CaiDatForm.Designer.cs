@@ -147,9 +147,10 @@
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(85, 432);
+            this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Save.Location = new System.Drawing.Point(170, 321);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(195, 23);
+            this.btn_Save.Size = new System.Drawing.Size(201, 32);
             this.btn_Save.TabIndex = 14;
             this.btn_Save.Text = "SAVE";
             this.btn_Save.UseVisualStyleBackColor = true;
@@ -158,9 +159,9 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(316, 358);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(406, 302);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(480, 132);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(390, 188);
             this.flowLayoutPanel1.TabIndex = 15;
             // 
             // label5
