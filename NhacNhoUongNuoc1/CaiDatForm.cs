@@ -138,13 +138,13 @@ namespace NhacNhoUongNuoc1
                 if (userResponded)
                 {
                     // Người dùng nhấn OK
-                    NuocDaUong += NuocUongVao;
-                    txt_NuocDangUong.Text = NuocDaUong.ToString();
-                    timeHistory.Add($"Mốc: {timeStamp} -Hoàn thành");
+                        NuocDaUong += NuocUongVao;
+                        txt_NuocDangUong.Text = NuocDaUong.ToString();
+                    timeHistory.Add($"Mốc: {timeStamp} -OK");
 
                     Label timeLabel = new Label
                     {
-                        Text = $"Mốc: {timeStamp} - Hoàn thành",
+                        Text = $"Mốc: {timeStamp} - OK",
                         AutoSize = true
                     };
                     flowLayoutPanel1.Controls.Add(timeLabel);
@@ -171,7 +171,7 @@ namespace NhacNhoUongNuoc1
         {
             if (notificationPanel == null)
             {
-                // Tạo Panel nếu chưa có
+                
                 notificationPanel = new Panel
                 {
                     Size = new Size(300, 100),
@@ -198,7 +198,7 @@ namespace NhacNhoUongNuoc1
                 notificationPanel.Controls.Add(lblNotification);
                 notificationPanel.Controls.Add(btnOK);
 
-                // Thêm vào Form
+                // adđ
                 this.Controls.Add(notificationPanel);
                 notificationPanel.BringToFront();
             }

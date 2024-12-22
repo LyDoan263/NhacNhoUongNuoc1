@@ -47,20 +47,19 @@ namespace NhacNhoUongNuoc1
                     string timestamp = parts[0].Replace("Mốc: ", "").Trim();
                     string status = parts[1].Trim();
 
-                    // Tách timestamp theo dấu "/" để chỉ lấy phần giờ và phút
+                    
                     string[] timestampParts = timestamp.Split(' ');
 
                     if (timestampParts.Length > 1)
                     {
                         // Tách phần thời gian (HH:mm:ss)
-                        string timePart = timestampParts[0]; // Ví dụ: "18:20:53"
-
-                        // Tách ra giờ và phút
+                        string timePart = timestampParts[0]; 
+                       // Tách ra giờ và phút
                         string[] timeElements = timePart.Split(':');
                         if (timeElements.Length >= 2)
                         {
                             string hourAndMinute = timeElements[0] + ":" + timeElements[1] + ":" + timeElements[2];
-                            timestamps.Add(hourAndMinute); // Thêm vào danh sách timestamps
+                            timestamps.Add(hourAndMinute); // add vào timestamps
                         }
                     }
 
